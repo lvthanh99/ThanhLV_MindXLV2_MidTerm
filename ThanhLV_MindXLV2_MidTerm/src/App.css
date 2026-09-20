@@ -1,24 +1,219 @@
-.brand { background: transparent; border: 0; color: #f5f6f7; cursor: pointer; font-size: 29px; font-weight: 800; letter-spacing: 1.2px; padding: 0; }
-html, body, #root { height: 100%; min-height: 100%; overflow: hidden; width: 100%; }
-body { overflow-x: hidden; }
-.app-shell { display: flex; flex-direction: column; gap: 29px; height: min(1009px, 100dvh); margin-inline: auto; padding: 15px 83px; width: min(100%, 1340px); }
-.nav-link { background: transparent; border: 0; color: inherit; cursor: pointer; font-size: 15px; padding: 10px 0; }
-.nav-link-active { color: #f5f6f7; }
-.search-box { background: #3a465a !important; border: 0 !important; color: #fff; height: 38px; max-width: 288px; }
-.search-box input { background: transparent !important; color: #fff !important; font-size: 15px; }
-.search-box input::placeholder { color: #a2a8b3; }
-.hero-banner { min-height: 360px; }
-.hero-banner img { height: 360px; }
-.play-button { align-items: center; background: rgba(255,255,255,.2); border: 1px solid rgba(255,255,255,.45); border-radius: 50%; bottom: 34px; color: #fff; cursor: pointer; display: flex; font-size: 23px; height: 46px; justify-content: center; position: absolute; right: 38px; transition: transform .2s, background .2s; width: 46px; }
-.play-button:hover { background: rgba(255,255,255,.35); transform: scale(1.08); }
-.release-grid { display: grid; gap: 26px; grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.release-card { background: transparent; border: 0; color: #fff; cursor: pointer; min-width: 0; padding: 0; text-align: center; }
-.poster-wrap { border-radius: 8px; height: 230px; overflow: hidden; position: relative; }
-.poster { height: 100%; object-fit: cover; transition: transform .3s; width: 100%; }
-.release-card:hover .poster { transform: scale(1.06); }
-.episode { background: linear-gradient(transparent, rgba(10,15,19,.9)); bottom: 0; font-size: 13px; left: 0; padding: 26px 4px 8px; position: absolute; width: 100%; }
-.release-title { display: block; font-size: 13px; font-weight: 600; line-height: 16px; margin-top: 8px; min-height: 32px; }
-@media (max-width: 900px) { .app-shell { padding-inline: 20px; } .release-grid { gap: 18px 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); } .poster-wrap { height: 230px; } .hero-banner, .hero-banner img { min-height: 340px; height: 340px; } }
-@media (max-width: 900px) { html, body, #root { height: auto; min-height: 100%; overflow-y: auto; } .app-shell { height: auto; max-height: none; min-height: 100dvh; overflow: visible; } }
-@media (max-width: 600px) { .app-shell { padding: 12px; } .brand { font-size: 24px; } .search-box { flex: 1; max-width: none; min-width: 0; } .hero-banner img { height: 250px; } .release-grid { gap: 10px 8px; grid-template-columns: repeat(3, minmax(0, 1fr)); } .poster-wrap { height: clamp(125px, 35vw, 165px); } .release-title { font-size: 11px; line-height: 13px; margin-top: 5px; min-height: 26px; } }
-@media (max-width: 380px) { .app-shell { padding-inline: 10px; } .brand { font-size: 21px; } .hero-banner img { height: 220px; } .hero-banner h2 { font-size: 22px; } .hero-banner p { font-size: 12px; line-height: 1.45; } }
+.brand {
+    background: transparent;
+    border: 0;
+    color: #f5f6f7;
+    cursor: pointer;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.app-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+    height: min(1009px, 100dvh);
+    margin-inline: auto;
+    padding: 15px 83px;
+    width: min(100%, 1340px);
+}
+
+.nav-link {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.search-box {
+    background: #3a465a !important;
+    border: 0 !important;
+    color: #fff;
+    height: 38px;
+    max-width: 288px;
+}
+
+.search-box input {
+    background: transparent !important;
+    color: #fff !important;
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #a2a8b3;
+}
+
+.hero-banner {
+    min-height: 360px;
+}
+
+.hero-banner img {
+    height: 360px;
+}
+
+.release-grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.release-card {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    min-width: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.poster-wrap {
+    border-radius: 8px;
+    height: 230px;
+    overflow: hidden;
+    position: relative;
+}
+
+.poster {
+    height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+    width: 100%;
+}
+
+.release-card:hover .poster {
+    transform: scale(1.06);
+}
+
+.episode {
+    background: linear-gradient(transparent, rgba(10, 15, 19, .9));
+    bottom: 0;
+    font-size: 13px;
+    left: 0;
+    padding: 26px 4px 8px;
+    position: absolute;
+    width: 100%;
+}
+
+.release-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 16px;
+    margin-top: 8px;
+    min-height: 32px;
+}
+
+@media (max-width: 900px) {
+    .app-shell {
+        padding-inline: 20px;
+    }
+
+    .release-grid {
+        gap: 18px 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .poster-wrap {
+        height: 230px;
+    }
+
+    .hero-banner,
+    .hero-banner img {
+        min-height: 340px;
+        height: 340px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    html,
+    body,
+    #root {
+        height: auto;
+        min-height: 100%;
+        overflow-y: auto;
+    }
+
+    .app-shell {
+        height: auto;
+        max-height: none;
+        min-height: 100dvh;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 600px) {
+    .app-shell {
+        padding: 12px;
+    }
+
+    .brand {
+        font-size: 24px;
+    }
+
+    .search-box {
+        flex: 1;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .hero-banner img {
+        height: 250px;
+    }
+
+    .release-grid {
+        gap: 10px 8px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .poster-wrap {
+        height: clamp(125px, 35vw, 165px);
+    }
+
+    .release-title {
+        font-size: 11px;
+        line-height: 13px;
+        margin-top: 5px;
+        min-height: 26px;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-shell {
+        padding-inline: 10px;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .hero-banner img {
+        height: 220px;
+    }
+
+    .hero-banner h2 {
+        font-size: 22px;
+    }
+
+    .hero-banner p {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+}
